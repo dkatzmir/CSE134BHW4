@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <title>title</title>
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.8/purify.js"></script>
+	    <script>
+		    function doConfirm()
+		    {
+			    document.getElementById("value").innerHTML='' ;
+			    document.getElementsByTagName("TABLE")[0].setAttribute("border", "0");
+			    document.getElementById("value").innerHTML='Confirm Result : ' + confirm('Do you want to confirm this?') ;
+			    document.getElementsByTagName("TABLE")[0].setAttribute("border", "1");
+			}
+			function doPrompt()
+			{
+				document.getElementById("value").innerHTML='' ;
+			    document.getElementsByTagName("TABLE")[0].setAttribute("border", "0");
+				var x  = prompt('What is your name?');
+				if(x=="" || x == null)
+					x = "User didn't enter anything"
+			    document.getElementById("value").innerHTML='Prompt Result : ' + x ;
+			    document.getElementsByTagName("TABLE")[0].setAttribute("border", "1");
+			}
+			function safePrompt()
+			{
+				document.getElementById("value").innerHTML='' ;
+			    document.getElementsByTagName("TABLE")[0].setAttribute("border", "0");
+				var x  = prompt('What is your name?');
+				var checkEmpty = (x) => { if(x=="" || x == null)
+											return "User didn't enter anything"; 
+											return x;}
+				x = checkEmpty(x)
+				var y = DOMPurify.sanitize(x);
+			    document.getElementById("value").innerHTML='Prompt Result : ' + y ;
+			    document.getElementsByTagName("TABLE")[0].setAttribute("border", "1");
+			}
+	    </script>
+	</head>
+	<body>
+		<h1>Simple Dialogs?</h1>
+		<button onclick="alert('Alert Pressed')">Alert</button>
+		<button onclick="doConfirm()">Confirm</button>
+		<button onclick="doPrompt()">Prompt</button>
+		<button onclick="safePrompt()">Safer Prompt</button>
+		<hr/>
+		<table id='table'>
+			<tr>
+				<td id='value'></td>
+			</tr>
+		</table>
+	</body>
+</html>

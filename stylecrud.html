@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		html {font-family: monospace; background-color: #f1fff5}
+		tr:nth-child(odd) {background-color: #f2f2f2;}
+		tr:nth-child(even){background-color: white;}
+		dialog {border-radius:25px; border-color: gray;}
+	</style>
+	<h1 style="text-align: center; background-color: #8dffb1; border-radius:25px; width: 95%; margin: 0px auto; padding: 2px;">Big List of Movies</h1><br>
+	<dialog id="dialog">
+	  <form method="dialog">
+	   	<b>Title: </b><input type="text" placeholder="Title" id="title"></input><br><br>
+	    <b>Year of Release: </b><input type="text" placeholder="Year" id="year"></input><br><br>
+	    <b>Rating: </b><select id="rating">
+					<option value="G">G</option>
+					<option value="PG">PG</option>
+					<option value="PG-13">PG-13</option>
+					<option value="R">R</option>
+					<option value="NR">NR</option>
+				</select>
+		<button id="cancel">Cancel</button><button id="save">Save</button>
+	  </form>
+	</dialog>
+	
+	<dialog id="dialogD">
+	  <form method="dialog">
+		  <b>Delete Movie?</b><br><br>
+	    <button>Cancel</button><button id="deleteButton">OK</button>
+	  </form>
+	</dialog>
+	<table id="list"style="margin: 0px auto; width:95%; text-align: left; ">
+		<tr>
+			<th>Title</th>	
+			<th style="width:70px; text-align: center;">Year</th>
+			<th style="width:60px; text-align: center;">Rating</th>
+			<th style="width:50px; text-align: center;">Edit</th>
+			<th style="width:50px; text-align: center;">Delete</th>
+		</tr>
+		<tr>
+			<td>Star Wars</td>	
+			<td style="text-align: center">1977</td>
+			<td style="text-align: center">PG</td>
+			<td style="text-align: center"><image src="edit.png" style="height:25px; vertical-align: middle;" class="edit"></image></td>
+			<td style="text-align: center"><image src="trash.png" style="height:25px; vertical-align: middle;" class="delete"></image></td>
+		</tr>
+		<tr>
+			<td>The Empire Strikes Back</td>	
+			<td style="text-align: center">1980</td>
+			<td style="text-align: center">PG</td>
+			<td style="text-align: center"><image src="edit.png" style="height:25px; vertical-align: middle;" class="edit"></image></td>
+			<td style="text-align: center"><image src="trash.png" style="height:25px; vertical-align: middle;" class="delete"></image></td>
+		</tr>
+		<tr>
+			<td>The Revenge of the Jedi</td>	
+			<td style="text-align: center">1983</td>
+			<td style="text-align: center">PG</td>
+			<td style="text-align: center"><image src="edit.png" style="height:25px; vertical-align: middle;" class="edit"></image></td>
+			<td style="text-align: center"><image src="trash.png" style="height:25px; vertical-align: middle;" class="delete"></image></td>
+		</tr>
+	</table>	
+	<div id= "status" style="margin: 0px auto; width:95%;"><image src="add.png" style="height:25px; vertical-align: middle;" id="add"><b>Add Movie</b></image></div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.8/purify.js"></script>
+	<script src="stylecrud.js"></script>
+</html>
